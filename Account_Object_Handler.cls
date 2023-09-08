@@ -9,6 +9,8 @@ public class Account_Object_Handler {
                 AccListMap.put(Accobj.ParentId,Accobj);
             }   
         } 
+
+
          List<Account> AccListIds = [SELECT Id,name, Parent_Account_Chekbox__c FROM Account WHERE id IN : AccListMap.keyset() ];
          for(Account AccoParntChek : AccListIds ){
              if( AccoParntChek.Parent_Account_Chekbox__c != true){
